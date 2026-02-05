@@ -6,7 +6,7 @@ const Budget=()=>{
 
     return(
         <div>
-<div className="budget container">
+<div className="budget container" id="budget">
 <div className="div1"></div>
 <div className="div2">
     <div className="pricing guid">
@@ -79,7 +79,7 @@ const Budget=()=>{
 
 </div>
 {/* <Contact /> */}
-<Footer/>
+{/* <Footer/> */}
 </div>
 
     )

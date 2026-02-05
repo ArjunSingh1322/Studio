@@ -1,34 +1,35 @@
 import React, { useState, useEffect } from "react";
-import Gallery from "./Gallery";
+import Gallery from "./Gallery.jsx";
 import Contact from "./Contact";
+import Budget from "./Budget.jsx"; // ✅ create this component
 
-// ✅ Import Images
 import mimg1 from "../assets/Mgrid_1.png";
 import mimg2 from "../assets/Mgrid_2.jpg";
 import mimg3 from "../assets/Mgrid_3.jpg";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [page, setPage] = useState("gallery"); // gallery | budget
 
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
-    return () => {
-      document.body.style.overflow = "auto";
-    };
+    document.body.style.overflow = open ? "hidden" : "auto";
+    return () => (document.body.style.overflow = "auto");
   }, [open]);
 
   return (
     <>
       <nav>
         <div className="navbar">
-          <button>Home</button>
-          <button>About</button>
+          <button onClick={() => window.location.hash = "gallery"}>
+  Gallery
+</button>
+
+<button onClick={() => window.location.hash = "budget"}>
+  Budget
+</button>
+
           <button onClick={() => setOpen(true)}>Contact</button>
+
           <Contact open={open} onClose={() => setOpen(false)} />
         </div>
 
@@ -45,7 +46,9 @@ const Navbar = () => {
         </div>
       </nav>
 
-      <Gallery />
+      
+      {/* {page === "gallery" && <Gallery />} */}
+      {/* {page === "budget" && <Budget />} */}
     </>
   );
 };

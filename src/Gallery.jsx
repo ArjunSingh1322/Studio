@@ -1,7 +1,6 @@
 import React from "react";
-import Budget from "./Budget";
+// import Budget from "./Budget";
 
-// Import Images
 import img1 from "../assets/grid_1.jpg";
 import img2 from "../assets/grid_2.jpg";
 import img3 from "../assets/grid_3.jpg";
@@ -14,7 +13,7 @@ import img8 from "../assets/grid_8.jpeg";
 const Gallery = () => {
   return (
     <>
-      <section className="contact-container">
+      <section className="contact-container" id="gallery">
 
         <marquee
           className="studio-marquee"
@@ -41,8 +40,6 @@ const Gallery = () => {
         </div>
 
       </section>
-
-      <Budget />
     </>
   );
 };
