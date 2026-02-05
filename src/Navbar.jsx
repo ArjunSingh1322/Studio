@@ -32,9 +32,9 @@ const Navbar = () => {
           <span className="m">M</span>OMENT_CAPTURE
         </div>
         <div className="collage" style={{ color: "white" }}>
-  <img src="https://i.pinimg.com/originals/43/f8/2c/43f82cfe13272af0e2e70ddc4dadb3a0.png" alt="nature" />
-  <img src="https://omghitched.com/wp-content/uploads/2024/05/v2-bb12r-a5o63.jpg" alt="forest" />
-  <img src="https://thelane.com/wp-content/uploads/2023/05/Suzy-Jimmy-Wedding-1-scaled.jpg" alt="mountain" />
+          <img src="../public/images/Mgrid_1.png" alt="path wrong" />
+  <img src="../public/images/Mgrid_2.jpg" alt="forest" />
+  <img src="../public/images/Mgrid_3.jpg" alt="mountain" />
 </div>
 
       </nav>

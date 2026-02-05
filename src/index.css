@@ -26,7 +26,7 @@ body::before {
   background:
     linear-gradient(rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 12)),
-    url("https://img.freepik.com/premium-photo/wedding-background-design-space_1230717-17796.jpg?w=2000");
+    url("../public/images/main_background.avif");
 
   background-size: cover;
   background-position: center;
@@ -94,13 +94,13 @@ nav {
   height: 120vh;
    width: 110vh; 
   background-color:bisque;
-  background-image: url("https://thumbs.dreamstime.com/b/background-texture-surface-natural-stone-sandstone-light-color-uneven-relief-rough-stone-texture-light-beige-139018409.jpg");
+  background-image: url("../public/images/budget_left.webp");
 }
 .div3{
     height: 120vh;
    width: 110vh; 
   background-color:rgb(228, 228, 227);
-  background-image: url("https://i.pinimg.com/originals/c5/16/73/c51673a32c76796a4ba5c6d8b2c579d8.jpg");
+  background-image: url("../public/images/Budget_right.jpg");
 }
 .budget {
   display: flex;
@@ -140,7 +140,7 @@ nav {
   margin-top: 60px;
   position: relative;
   border-left: 10px solid rgb(235, 176, 40);
-  background-image: url("https://reviewit.pk/wp-content/uploads/2022/06/Sarah-2-820x1024.jpg");
+  background-image: url("../public/images/Shoot_1.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   background-size: cover;
@@ -150,14 +150,14 @@ nav {
 }
 
 .budget1 .a.b {
-  background-image: url("https://i.pinimg.com/originals/94/cb/1f/94cb1fa1007427b7acb796f82c36f4e7.jpg");
+  background-image: url("../public/images/shoot_2.jpg");
   background-size: contain;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .budget1 .a.c {
-  background-image: url("https://images.squarespace-cdn.com/content/v1/5a1fac7e914e6b30d737146f/1683652897432-UKUTT07XCKS9NI9NLOXT/228A4750a.jpg");
+  background-image: url("../public/images/shoot_3.webp");
   background-size: contain;
   background-repeat: no-repeat;
   background-size: cover;
@@ -498,7 +498,7 @@ html, body{
     background:
       linear-gradient(rgba(2, 0, 0.5, 0.9),
       rgba(0, 0, 0, 0.12)),
-      url("https://img.freepik.com/premium-photo/wedding-background-design-space_1230717-17796.jpg?w=2000");
+      url("../public/images/main_background.avif");
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -645,6 +645,39 @@ html, body{
   }
 
   /* ===== PHOTO GRID ===== */
+
+  
+.studio-marquee {
+  background: linear-gradient(90deg, rgb(232, 126, 69), #ebd4a6, rgb(232, 126, 69));
+  color: #3b2a1a;
+  padding: 18px 0;
+  font-size: 22px;
+  font-family: "Dancing Script", cursive;
+  font-weight: bold;
+  height: 30px;
+    line-height: 1px;
+
+  /* border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px; */
+
+  /* margin: 30px 40px; */
+  /* margin-left: 440px; */
+  margin-top: 30px;
+  /* border-style: groove; */
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  /* border: 4px solid rgba(255, 255, 255, 0.6); */
+  /* border-style:inset; */
+  letter-spacing: 1.5px;
+}
+
+.studio-marquee span {
+  color: #3311c8;
+  font-size: 30px;
+  /* font-weight: 900; */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
 
   .photo-grid {
     grid-template-columns: repeat(2, 1fr);
