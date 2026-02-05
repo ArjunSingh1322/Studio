@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 
 const Contact = ({ open, onClose }) => {
@@ -33,6 +33,20 @@ const Contact = ({ open, onClose }) => {
       }, 3000);
     });
   };
+
+
+  useEffect(() => {
+  if (open) {
+    document.body.classList.add("no-scroll");
+  } else {
+    document.body.classList.remove("no-scroll");
+  }
+
+  return () => {
+    document.body.classList.remove("no-scroll");
+  };
+}, [open]);
+
 
   return (
     <div className={`contact-sidebar ${open ? "open" : ""}`}>

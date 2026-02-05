@@ -3,6 +3,12 @@ html, body {
   overflow-x: hidden;
 }
 
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+
 * {
   margin: 0%;
 }
@@ -314,6 +320,7 @@ p {
 /* Open state */
 .contact-sidebar.open {
   right: 0;
+    overflow: hidden;
 
 }
 
@@ -477,11 +484,13 @@ html, body{
     width: 100%;
     overflow-x: hidden;
     margin: 0;
+     
   }
 
-  body {
+  /* body {
     background-color: #8b1e1e;
-  }
+    
+  } */
 
   body::before {
     position: fixed;
@@ -525,15 +534,6 @@ html, body{
     box-shadow 0.4s ease;
 }
 
-.collage img:hover{
-  transform: scale(1.12);
-
-  /* Colorful glow on hover */
-  box-shadow:
-    0 0 15px rgba(255, 215, 0, 0.8),
-    0 0 30px rgba(255, 105, 180, 0.6),
-    0 0 45px rgba(0, 191, 255, 0.6);
-}
 
 
   .div1,
@@ -569,7 +569,7 @@ html, body{
   /* ===== LOGO ===== */
   .logo {
     text-align: center;
-    font-size: 40px;
+    font-size: 35px;
     margin: 20px 0 40px;
     padding: 0;
   }
