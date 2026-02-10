@@ -1,14 +1,15 @@
 import React from "react";
-
+import Navbar from "./Navbar";
 
 const Footer = () => {
   return (
     <footer className="studio-footer">
+      <Navbar/>
       <div className="footer-content">
 
         {/* Brand */}
         <div className="footer-box brand">
-          <h2>Moment Capture 📸</h2>
+          <h2><span>M</span>oment Capture 📸</h2>
           <p>We freeze your beautiful moments forever.</p>
         </div>
 

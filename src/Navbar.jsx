@@ -1,54 +1,61 @@
 import React, { useState, useEffect } from "react";
-import Gallery from "./Gallery.jsx";
+import { Link } from "react-router-dom";
 import Contact from "./Contact";
-import Budget from "./Budget.jsx"; // ✅ create this component
-
-import mimg1 from "../assets/Mgrid_1.png";
-import mimg2 from "../assets/Mgrid_2.jpg";
-import mimg3 from "../assets/Mgrid_3.jpg";
 
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
-  const [page, setPage] = useState("gallery"); // gallery | budget
 
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [contactOpen, setContactOpen] = useState(false);
+
+  // Lock scroll when any sidebar open
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "auto";
-    return () => (document.body.style.overflow = "auto");
-  }, [open]);
+    document.body.classList.toggle("no-scroll", menuOpen || contactOpen);
+  }, [menuOpen, contactOpen]);
 
   return (
     <>
-      <nav>
-        <div className="navbar">
-          <button onClick={() => window.location.hash = "gallery"}>
-  Gallery
-</button>
+      {/* HAMBURGER */}
+      <div className="hamburger" onClick={() => setMenuOpen(true)}>
+        ☰
+      </div>
 
-<button onClick={() => window.location.hash = "budget"}>
-  Budget
-</button>
+      {/* OVERLAY */}
+      <div
+        className={menuOpen ? "overlay show" : "overlay"}
+        onClick={() => setMenuOpen(false)}
+      ></div>
 
-          <button onClick={() => setOpen(true)}>Contact</button>
+      {/* SIDEBAR */}
+      <div className={menuOpen ? "sidebar open" : "sidebar"}>
 
-          <Contact open={open} onClose={() => setOpen(false)} />
+        <div className="close-btn" onClick={() => setMenuOpen(false)}>✖</div>
+
+        <div className="sidebar-links">
+
+          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+
+          <Link to="/gallery" onClick={() => setMenuOpen(false)}>Gallery</Link>
+
+          <Link to="/budget" onClick={() => setMenuOpen(false)}>Budget</Link>
+
+          {/* CONTACT */}
+          <Link
+            to="#"
+            onClick={() => {
+              setMenuOpen(false);
+              setContactOpen(true);
+            }}
+          >
+            Contact
+          </Link>
+
+          <Link to="/footer" onClick={() => setMenuOpen(false)}>Footer</Link>
+
         </div>
+      </div>
 
-        <hr />
-
-        <div className="logo">
-          <span className="m">M</span>OMENT_CAPTURE
-        </div>
-
-        <div className="collage" style={{ color: "white" }}>
-          <img src={mimg1} alt="grid 1" />
-          <img src={mimg2} alt="grid 2" />
-          <img src={mimg3} alt="grid 3" />
-        </div>
-      </nav>
-
-      
-      {/* {page === "gallery" && <Gallery />} */}
-      {/* {page === "budget" && <Budget />} */}
+      {/* CONTACT SIDEBAR */}
+      <Contact open={contactOpen} onClose={() => setContactOpen(false)} />
     </>
   );
 };

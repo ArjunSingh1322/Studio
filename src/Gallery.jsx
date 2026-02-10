@@ -1,6 +1,6 @@
 import React from "react";
 // import Budget from "./Budget";
-
+import Navbar from "./Navbar";
 import img1 from "../assets/grid_1.jpg";
 import img2 from "../assets/grid_2.jpg";
 import img3 from "../assets/grid_3.jpg";
@@ -13,15 +13,16 @@ import img8 from "../assets/grid_8.jpeg";
 const Gallery = () => {
   return (
     <>
+    <Navbar/>
       <section className="contact-container" id="gallery">
 
         <marquee
           className="studio-marquee"
-          behavior="scroll"
+          behavior="scrole"
           direction="left"
           scrollamount="8"
         >
-          Welcome to <span>Moonlight Wedding Studio</span> 
+          Welcome to <span>Moment capture Wedding Studio</span> 
           | Cinematic Wedding Shoots 
           | Pre-Wedding Photography 
           | Luxury Albums  
