@@ -1,5 +1,5 @@
 import React from "react";
-// import Budget from "./Budget";
+import Budget from "./Budget";
 import Navbar from "./Navbar";
 import img1 from "../assets/grid_1.jpg";
 import img2 from "../assets/grid_2.jpg";
@@ -13,7 +13,7 @@ import img8 from "../assets/grid_8.jpeg";
 const Gallery = () => {
   return (
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
       <section className="contact-container" id="gallery">
 
         <marquee
@@ -41,6 +41,7 @@ const Gallery = () => {
         </div>
 
       </section>
+      <Budget/>
     </>
   );
 };

@@ -1,60 +1,44 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Contact from "./Contact";
 
 const Navbar = () => {
 
-  const [menuOpen, setMenuOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
+  const location = useLocation();
 
-  // Lock scroll when any sidebar open
+  // 🔥 CLOSE CONTACT WHEN ROUTE CHANGES
   useEffect(() => {
-    document.body.classList.toggle("no-scroll", menuOpen || contactOpen);
-  }, [menuOpen, contactOpen]);
+    setContactOpen(false);
+  }, [location.pathname]);
+
+  // Lock scroll only when contact open
+  useEffect(() => {
+    document.body.classList.toggle("no-scroll", contactOpen);
+  }, [contactOpen]);
 
   return (
     <>
-      {/* HAMBURGER */}
-      <div className="hamburger" onClick={() => setMenuOpen(true)}>
-        ☰
-      </div>
+      <div className="top-navbar">
 
-      {/* OVERLAY */}
-      <div
-        className={menuOpen ? "overlay show" : "overlay"}
-        onClick={() => setMenuOpen(false)}
-      ></div>
+        {/* <div className="nav-logo">Studio</div> */}
 
-      {/* SIDEBAR */}
-      <div className={menuOpen ? "sidebar open" : "sidebar"}>
+        <div className="nav-links">
 
-        <div className="close-btn" onClick={() => setMenuOpen(false)}>✖</div>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/gallery">Gallery</NavLink>
+          <NavLink to="/budget">Budget</NavLink>
 
-        <div className="sidebar-links">
-
-          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
-
-          <Link to="/gallery" onClick={() => setMenuOpen(false)}>Gallery</Link>
-
-          <Link to="/budget" onClick={() => setMenuOpen(false)}>Budget</Link>
-
-          {/* CONTACT */}
-          <Link
-            to="#"
-            onClick={() => {
-              setMenuOpen(false);
-              setContactOpen(true);
-            }}
+          <span
+            className="contact-link"
+            onClick={() => setContactOpen(true)}
           >
             Contact
-          </Link>
-
-          <Link to="/footer" onClick={() => setMenuOpen(false)}>Footer</Link>
+          </span>
 
         </div>
       </div>
 
-      {/* CONTACT SIDEBAR */}
       <Contact open={contactOpen} onClose={() => setContactOpen(false)} />
     </>
   );

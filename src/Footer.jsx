@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 const Footer = () => {
   return (
     <footer className="studio-footer">
-      <Navbar/>
+      {/* <Navbar/> */}
       <div className="footer-content">
 
         {/* Brand */}
