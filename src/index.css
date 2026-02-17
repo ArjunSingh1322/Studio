@@ -70,6 +70,8 @@ body.no-scroll {
 =========================== */
 
 .top-navbar{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bolder;
   position: fixed;
   /* top: 20px; */
   left: 50%;
@@ -90,7 +92,7 @@ justify-content: center;
   /* border-radius: 60px; */
   border: 1px solid rgba(255,255,255,0.25);
 
-  z-index: 4000;
+  z-index: 2000;
 
   /* box-shadow: 0 0 25px rgba(200,200,200,0.25); */
 }
@@ -163,7 +165,7 @@ justify-content: center;
   }
 
   .nav-links{
-    gap: 25px;
+    gap: 15px;
     flex-wrap: wrap;
     justify-content: center;
   }
@@ -176,7 +178,7 @@ justify-content: center;
 
 
 .nav-links a.active{
-  color: #0b08cf;
+  color: #de3106;
   text-shadow:
     0 0 10px rgba(255,229,138,0.7),
     0 0 20px rgba(255,229,138,0.5);
@@ -1174,7 +1176,7 @@ p {
 
   .contact-sidebar {
     width: 320px;
-    z-index: 5000;
+    z-index: 3000;
   }
 
 

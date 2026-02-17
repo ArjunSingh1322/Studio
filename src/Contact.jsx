@@ -47,15 +47,22 @@ const Contact = ({ open, onClose }) => {
   };
 }, [open]);
 
+return (
+  <>
+    {/* Background Blur */}
+    <div
+      className={`overlay ${open ? "show" : ""}`}
+      onClick={onClose}
+    ></div>
 
-  return (
+    {/* Contact Sidebar */}
     <div className={`contact-sidebar ${open ? "open" : ""}`}>
       <span className="close-btn" onClick={onClose}>×</span>
 
       <h2>Contact Us</h2>
 
-      <form className="contact-form"      onSubmit={handleSubmit}>
-        <input type="text" name="name"    placeholder="Your Name" required />
+      <form className="contact-form" onSubmit={handleSubmit}>
+        <input type="text" name="name" placeholder="Your Name" required />
         <input type="number" name="phone" placeholder="Mobile Number" required />
         <textarea name="message" rows="4" placeholder="Your Message" required />
 
@@ -71,7 +78,7 @@ const Contact = ({ open, onClose }) => {
         <strong>KARNAL</strong>
       </div>
     </div>
-  );
-};
+  </>
+);}
 
-export default Contact;
+export default Contact
